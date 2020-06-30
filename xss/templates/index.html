@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<body>
+    <style>
+        #bgimg {
+            background-image: url("{% static 'img/security.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+            height: 100%;
+            width: 100%;
+            height:auto;
+
+        }
+    </style>
+
+    <div class="" id="bgimg">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <a class="navbar-brand" href="#">
+                <h1 class=" font-weight-bold text-danger">XSS</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mr-5">
+                    <li class="nav-item active">
+                        <a class="nav-link font-weight-bold mx-3" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold mx-3" href="{% url 'scan' %}">Scan</a>
+                    </li>
+                   
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+
+            <!-- <h1 class=" font-weight-bold text-light">Welcome!</h1> -->
+            <div class="row">
+                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                    <h1 class=" text-light m-0 font-weight-bold pl-5 pt-5 display-4 d-none d-lg-block d-xl-block">
+                        Scan your Web App for XSS Vulnerabiliy.</h1>
+                    <h1 class=" text-light m-0 font-weight-bold pl-3 display-4 d-none d-md-block d-lg-none">
+                        Scan your Web App for XSS Vulnerabiliy.</h1>
+                    <h1 class=" text-light m-0 font-weight-bold  display-4 d-block d-sm-block d-md-none">Scan your Web
+                        App for XSS Vulnerabiliy.</h1>
+
+                </div>
+
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12 mb-2">
+                    <div class=" d-flex justify-content-center">
+                        <a href="{% url 'scan' %}" class="text-decoration-none btn btn-outline-light rounded-0 text-light" style="background-color: rgba(0, 0, 0, 0.4);">
+                            <h3 class="text-center m-0">Scan Now</h3>
+                        </a>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="row mt-4 pt-md-5 py-md-5">
+                <div class="col-12">
+
+                    <div class=" d-flex justify-content-center">
+                        <div class="containerr">
+                            <div class="chevron"></div>
+                            <div class="chevron"></div>
+                            <div class="chevron"></div>
+                            <span class="text">Scroll down</span>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row " id="page-2">
+            <div class="col-12">
+                <h1 class="text-center font-weight-bold">Cross-site Scripting</h1>
+                <div class=" d-flex justify-content-center">
+                    <div class="" style="width: 100px; height:5px; background-color:#cc0000;"></div>
+                </div>
+
+            </div>
+
+            <div class="col-12">
+                <p class="text-center" style="font-family: 'abel';font-size: 25px;">Cross-site scripting (XSS) allows
+                    attackers to execute scripts in the victim’s browser which can hijack their session, deface content,
+                    or redirect them to a malicious website. Cross-Site Scripting (XSS) continues to be within the OWASP
+                    Top 10</p>
+
+            </div>
+
+        </div>
+    </div>
+    <div style="background-color: #b30000;">
+        <div class="container">
+            <div class="row px-md-5 py-5" >
+                <div class="col-12">
+                    <h1 class="text-center font-weight-bold text-light">Why mitigating XSS vulnerability?</h1>                    
+    
+                </div>
+    
+                <div class="col-12">
+                    
+                    <p class=" text-center text-light py-3" style="font-family: 'abel';font-size: 25px;">
+                        There is a reason why XSS has been in OWASP for 2013 and 2017. XSS can have huge implications for a
+                        web application and its users. User accounts can be hijacked, credentials could be stolen, sensitive
+                        data could be exfiltrated, and lastly, access to your client computers can be obtained.
+                    </p>
+                    <div class=" d-flex justify-content-center">
+                        <a href="{% url 'scan' %}" class="text-decoration-none btn btn-outline-light rounded-">
+                            <h3 class="text-center m-0">Scan Now</h3>
+                        </a>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
+
+   {% include 'footer.html' %}
+</body>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <h1 class=" font-weight-bold text-danger">XSS</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mr-5">
+                <li class="nav-item active">
+                    <a class="nav-link font-weight-bold mx-3" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold mx-3" href="{% url 'scan' %}">Scan</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+    <div class="container my-5">
+        <div class="row ">
+            <div class="col-12">
+                <h1 class="text-center font-weight-bold ">Scan Web Pages</h1>
+                <div class=" d-flex justify-content-center">
+                    <div class="" style="width: 100px; height:5px; background-color:#cc0000;"></div>
+                </div>
+
+                <p class=" text-center lead text-muted mt-3">Enter url which contain a form.</p>
+
+                {% if messages %}
+                {% for message in messages %}
+                <div class="{{ message.tags }} text-danger text-wrap">
+                    <p class="lead">{{ message }}</p>                    
+                </div>
+                {% endfor %}
+                {% endif %}
+                <form action="" method="POST" class="mt-5">{% csrf_token %}
+                    <div class=" form-row">
+
+                        <div class="col-12">
+                            <div class=" mx-md-5 px-md-5">
+                                {{form.url}}
+                            </div>
+                            
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-dark mt-3 text-center btn-lg font-weight-bold"> <span
+                                    class="h2 font-weight-bold">Scan</span> </button>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="col-12">
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+{% endblock %}
