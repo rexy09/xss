@@ -6,7 +6,7 @@ beautifulsoup4==4.9.1
 blinker==1.4
 Brlapi==0.7.0
 bs4==0.0.1
-certifi==2019.11.28
+certifi==2022.12.7
 chardet==3.0.4
 command-not-found==0.3
 configobj==5.0.6
