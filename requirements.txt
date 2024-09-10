@@ -78,7 +78,7 @@ ubuntu-advantage-tools==20.3
 ubuntu-drivers-common==0.0.0
 ufw==0.36
 unattended-upgrades==0.1
-urllib3==1.25.8
+urllib3==1.26.19
 usb-creator==0.3.7
 vboxapi==1.0
 virtualenv==20.0.17
